@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		791C59F31CD057D9005CF5E3 /* DeviceInfomation.m in Sources */ = {isa = PBXBuildFile; fileRef = 791C59F21CD057D9005CF5E3 /* DeviceInfomation.m */; };
 		7955C2361CCF71F9008DB8DB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7955C2351CCF71F9008DB8DB /* main.m */; };
 		7955C2391CCF71F9008DB8DB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7955C2381CCF71F9008DB8DB /* AppDelegate.m */; };
 		7955C23C1CCF71F9008DB8DB /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7955C23B1CCF71F9008DB8DB /* ViewController.m */; };
@@ -36,6 +37,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		791C59F11CD057D9005CF5E3 /* DeviceInfomation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeviceInfomation.h; sourceTree = "<group>"; };
+		791C59F21CD057D9005CF5E3 /* DeviceInfomation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeviceInfomation.m; sourceTree = "<group>"; };
 		7955C2311CCF71F9008DB8DB /* LogManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LogManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7955C2351CCF71F9008DB8DB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		7955C2371CCF71F9008DB8DB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -117,6 +120,8 @@
 				7955C2671CCF7207008DB8DB /* Prifix-header.h */,
 				7955C26D1CCF86A9008DB8DB /* LogManager.h */,
 				7955C26E1CCF86A9008DB8DB /* LogManager.m */,
+				791C59F11CD057D9005CF5E3 /* DeviceInfomation.h */,
+				791C59F21CD057D9005CF5E3 /* DeviceInfomation.m */,
 			);
 			path = LogManager;
 			sourceTree = "<group>";
@@ -284,6 +289,7 @@
 				7955C23C1CCF71F9008DB8DB /* ViewController.m in Sources */,
 				7955C2391CCF71F9008DB8DB /* AppDelegate.m in Sources */,
 				7955C2361CCF71F9008DB8DB /* main.m in Sources */,
+				791C59F31CD057D9005CF5E3 /* DeviceInfomation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -511,6 +517,7 @@
 				7955C2601CCF71F9008DB8DB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7955C2611CCF71F9008DB8DB /* Build configuration list for PBXNativeTarget "LogManagerTests" */ = {
 			isa = XCConfigurationList;
@@ -519,6 +526,7 @@
 				7955C2631CCF71F9008DB8DB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7955C2641CCF71F9008DB8DB /* Build configuration list for PBXNativeTarget "LogManagerUITests" */ = {
 			isa = XCConfigurationList;
@@ -527,6 +535,7 @@
 				7955C2661CCF71F9008DB8DB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

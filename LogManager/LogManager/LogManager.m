@@ -7,6 +7,7 @@
 //
 
 #import "LogManager.h"
+#import "DeviceInfomation.h"
 
 @implementation LogManager
 
@@ -20,8 +21,12 @@
     formatter.dateFormat = @"yyyy-MM-dd";
     NSString *stringDate = [formatter stringFromDate:[NSDate date]];
     
+    // 获取手机型号和手机版本号
+    NSString *deviceModel = [DeviceInfomation deviceModel];
+    NSString *deviceVersion = [DeviceInfomation deviceVersion];
+    
     // 拼接文件名
-    NSString *fileName =[NSString stringWithFormat:@"%@.log", stringDate];
+    NSString *fileName =[NSString stringWithFormat:@"%@_%@/%@.log", deviceModel, deviceVersion, stringDate];
     NSString *logFilePath = [documentsDirectory stringByAppendingPathComponent:fileName];
     
     // 写入日志文件
