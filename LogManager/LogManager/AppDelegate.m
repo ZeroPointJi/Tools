@@ -17,13 +17,11 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // 输出文件所在地址
-    NSLog(@"%@", NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES));
-    
     [LogManager redirectNSLogToDocumentFolder];
     
     LOG(@"应用程序完成加载");
     LOG(@"你给不给我出来?");
+    LOG(@"应该没有错吧");
     
     return YES;
 }
@@ -32,7 +30,5 @@
     LOG(@"");
     LOG_APPEND;
 }
-
-
 
 @end

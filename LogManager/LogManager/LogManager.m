@@ -26,11 +26,11 @@
     NSString *deviceVersion = [DeviceInfomation deviceVersion];
     
     // 拼接文件名
-    NSString *fileName =[NSString stringWithFormat:@"%@_%@/%@.log", deviceModel, deviceVersion, stringDate];
+    NSString *fileName =[NSString stringWithFormat:@"%@_%@:%@.log", deviceModel, deviceVersion, stringDate];
     NSString *logFilePath = [documentsDirectory stringByAppendingPathComponent:fileName];
     
     // 写入日志文件
-    freopen([logFilePath cStringUsingEncoding:NSASCIIStringEncoding],"a+",stderr);
+    freopen([logFilePath cStringUsingEncoding:NSASCIIStringEncoding],"a+", stderr);
 }
 
 @end
