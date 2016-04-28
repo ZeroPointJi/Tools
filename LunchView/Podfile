@@ -1,0 +1,6 @@
+ #source "http://git.oschina.net/akuandev/Specs.git"
+ platform :ios, '8.0'
+
+target 'LunchView' do
+    #pod "SDWebImage"
+end
