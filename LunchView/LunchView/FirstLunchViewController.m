@@ -9,23 +9,28 @@
 #import "FirstLunchViewController.h"
 #import "MainViewController.h"
 #import "FirstLunchAnimator.h"
-#import "UIImageView+WebCache.h"
+
+#define kScreenFrame [UIScreen mainScreen].bounds
+#define kScreenW  [UIScreen mainScreen].bounds.size.width
+#define kScreenH [UIScreen mainScreen].bounds.size.height
 
 @interface FirstLunchViewController () <UIScrollViewDelegate>
 
+/** 动画体 */
 @property (nonatomic, strong) FirstLunchAnimator *animator;
-@property (nonatomic, strong) NSMutableArray *scrollViewArr;
+/** 滚动视图 */
 @property (nonatomic, strong) UIScrollView *scrollView;
+/** 指示器 */
 @property (nonatomic, strong) UIPageControl *pageControl;
 
 @end
 
 @implementation FirstLunchViewController
 
-- (NSMutableArray *)scrollViewArr
+- (NSArray *)scrollViewArr
 {
-    if (!_scrollViewArr) {
-        self.scrollViewArr = [NSMutableArray array];
+    if (!_scrollView) {
+        self.scrollViewArr = [NSArray array];
     }
     return _scrollViewArr;
 }
@@ -44,37 +49,39 @@
     
     self.view.backgroundColor = [UIColor redColor];
     
-    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
-    button.frame = CGRectMake(0, 0, 100, 40);
-    button.center = self.view.center;
-    [button setTitle:@"引导界面" forState:UIControlStateNormal];
-    [button setTitleColor:[UIColor darkGrayColor] forState:UIControlStateNormal];
-    [button addTarget:self action:@selector(presentToLunchVC) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:button];
+    [self setupScrollView];
     
-    [self setupLunchView];
+    [self setupPageControl];
+    
+    [self setupIntoButton];
 }
 
-- (void)setupLunchView
+/**
+ *  初始化滚动视图
+ */
+- (void)setupScrollView
 {
-    CGRect screenFrame = [UIScreen mainScreen].bounds;
-    CGFloat screenW = screenFrame.size.width;
-    CGFloat screenH = screenFrame.size.height;
-    
-    _scrollView = [[UIScrollView alloc] initWithFrame:screenFrame];
+    _scrollView = [[UIScrollView alloc] initWithFrame:kScreenFrame];
     _scrollView.pagingEnabled = YES;
     _scrollView.delegate = self;
-    _scrollView.contentSize = CGSizeMake(screenFrame.size.width * self.scrollViewArr.count, 0);
+    _scrollView.contentSize = CGSizeMake(kScreenW * self.scrollViewArr.count, 0);
+    _scrollView.bounces = NO;
     [self.view addSubview:_scrollView];
     
     CGFloat current = 0;
     for (UIView *view in self.scrollViewArr) {
-        view.frame = CGRectMake(current * screenW, 0, screenW, screenH);
+        view.frame = CGRectMake(current * kScreenW, 0, kScreenW, kScreenH);
         [_scrollView addSubview:view];
         current++;
     }
-    
-    _pageControl = [[UIPageControl alloc] initWithFrame:CGRectMake(0, screenH - 50, screenW, 50)];
+}
+
+/**
+ *  初始化页面指示器
+ */
+- (void)setupPageControl
+{
+    _pageControl = [[UIPageControl alloc] initWithFrame:CGRectMake(0, kScreenH - 50, kScreenW, 50)];
     _pageControl.numberOfPages = self.scrollViewArr.count;
     _pageControl.pageIndicatorTintColor = [UIColor whiteColor];
     _pageControl.currentPageIndicatorTintColor = [UIColor darkGrayColor];
@@ -82,27 +89,46 @@
     [self.view addSubview:_pageControl];
 }
 
+/**
+ *  初始化进入按钮
+ */
+- (void)setupIntoButton
+{
+    _intoButton.center = CGPointMake((self.scrollViewArr.count - 1) * kScreenW + 100, kScreenH - 200);
+    [_intoButton addTarget:self action:@selector(presentToLunchVC) forControlEvents:UIControlEventTouchUpInside];
+    [_scrollView addSubview:_intoButton];
+}
+
+/**
+ *  按钮点击事件
+ */
 - (void)presentToLunchVC
 {
-    MainViewController *mainVC = [[MainViewController alloc] init];
-    mainVC.transitioningDelegate = self.animator;
-    mainVC.modalPresentationStyle = UIModalPresentationCustom;
-    [self presentViewController:mainVC animated:YES completion:nil];
+    self.presentViewController.transitioningDelegate = self.animator;
+    self.presentViewController.modalPresentationStyle = UIModalPresentationCustom;
+    [self presentViewController:self.presentViewController animated:YES completion:nil];
 }
 
+/**
+ *  指示器事件
+ *
+ *  @param pageControl 指示器
+ */
 - (void)pageControlValueChanged:(UIPageControl *)pageControl
 {
-    CGRect screenFrame = [UIScreen mainScreen].bounds;
-    CGFloat screenW = screenFrame.size.width;
-    
     CGFloat offsetx = pageControl.currentPage;
-    self.scrollView.contentOffset = CGPointMake(offsetx * screenW, 0);
+    self.scrollView.contentOffset = CGPointMake(offsetx * kScreenW, 0);
 }
 
+/**
+ *  滚动事件
+ *
+ *  @param scrollView 滚动视图
+ */
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
     CGFloat offsetx = scrollView.contentOffset.x;
-    self.pageControl.currentPage = (int)(offsetx / 2 + 0.5);
+    self.pageControl.currentPage = (int)(offsetx / kScreenW  + 0.5);
 }
 
 @end
