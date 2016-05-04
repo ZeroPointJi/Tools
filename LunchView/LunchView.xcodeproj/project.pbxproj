@@ -15,7 +15,6 @@
 		791C5A881CD0A157005CF5E3 /* FirstLunchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 791C5A851CD0A157005CF5E3 /* FirstLunchViewController.m */; };
 		791C5A891CD0A157005CF5E3 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 791C5A871CD0A157005CF5E3 /* MainViewController.m */; };
 		791C5A8F1CD0AF26005CF5E3 /* FirstLunchAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 791C5A8E1CD0AF26005CF5E3 /* FirstLunchAnimator.m */; };
-		791C5A9E1CD0F5CB005CF5E3 /* MainPresentationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 791C5A9D1CD0F5CB005CF5E3 /* MainPresentationController.m */; };
 		BCAACEDB9685643E80F5D28D /* libPods-LunchView.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D72DF8A0B9E0F46EF69D6EA5 /* libPods-LunchView.a */; };
 /* End PBXBuildFile section */
 
@@ -55,8 +54,6 @@
 		791C5A871CD0A157005CF5E3 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		791C5A8D1CD0AF26005CF5E3 /* FirstLunchAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirstLunchAnimator.h; sourceTree = "<group>"; };
 		791C5A8E1CD0AF26005CF5E3 /* FirstLunchAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirstLunchAnimator.m; sourceTree = "<group>"; };
-		791C5A9C1CD0F5CB005CF5E3 /* MainPresentationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainPresentationController.h; sourceTree = "<group>"; };
-		791C5A9D1CD0F5CB005CF5E3 /* MainPresentationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainPresentationController.m; sourceTree = "<group>"; };
 		D72DF8A0B9E0F46EF69D6EA5 /* libPods-LunchView.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LunchView.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E409BE17D00D5E4A37B05A1D /* Pods-LunchView.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LunchView.release.xcconfig"; path = "Pods/Target Support Files/Pods-LunchView/Pods-LunchView.release.xcconfig"; sourceTree = "<group>"; };
 		F69C3A18D7CBE0A3D8119A06 /* Pods-LunchView.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LunchView.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LunchView/Pods-LunchView.debug.xcconfig"; sourceTree = "<group>"; };
@@ -136,8 +133,6 @@
 				791C5A851CD0A157005CF5E3 /* FirstLunchViewController.m */,
 				791C5A8D1CD0AF26005CF5E3 /* FirstLunchAnimator.h */,
 				791C5A8E1CD0AF26005CF5E3 /* FirstLunchAnimator.m */,
-				791C5A9C1CD0F5CB005CF5E3 /* MainPresentationController.h */,
-				791C5A9D1CD0F5CB005CF5E3 /* MainPresentationController.m */,
 				791C5A861CD0A157005CF5E3 /* MainViewController.h */,
 				791C5A871CD0A157005CF5E3 /* MainViewController.m */,
 				791C5A571CD09C9D005CF5E3 /* Assets.xcassets */,
@@ -357,7 +352,6 @@
 			files = (
 				791C5A501CD09C9D005CF5E3 /* AppDelegate.m in Sources */,
 				791C5A881CD0A157005CF5E3 /* FirstLunchViewController.m in Sources */,
-				791C5A9E1CD0F5CB005CF5E3 /* MainPresentationController.m in Sources */,
 				791C5A891CD0A157005CF5E3 /* MainViewController.m in Sources */,
 				791C5A8F1CD0AF26005CF5E3 /* FirstLunchAnimator.m in Sources */,
 				791C5A4D1CD09C9D005CF5E3 /* main.m in Sources */,

@@ -90,11 +90,11 @@
 }
 
 /**
- *  初始化进入按钮
+ *  调整输入按钮位置
  */
 - (void)setupIntoButton
 {
-    _intoButton.center = CGPointMake((self.scrollViewArr.count - 1) * kScreenW + 100, kScreenH - 200);
+    _intoButton.center = CGPointMake((self.scrollViewArr.count - 1) * kScreenW + kScreenW / 2, kScreenH - 200);
     [_intoButton addTarget:self action:@selector(presentToLunchVC) forControlEvents:UIControlEventTouchUpInside];
     [_scrollView addSubview:_intoButton];
 }

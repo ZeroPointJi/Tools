@@ -18,7 +18,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    NSLog(@"%@", [DeviceInfomation deviceModelVersion]);
+    NSLog(@"%@", [DeviceInfomation deviceVersion]);
 }
 
 - (void)didReceiveMemoryWarning {

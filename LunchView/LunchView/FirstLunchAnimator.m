@@ -7,7 +7,6 @@
 //
 
 #import "FirstLunchAnimator.h"
-#import "MainPresentationController.h"
 
 @interface FirstLunchAnimator()
 
@@ -19,7 +18,7 @@
 // 返回负责转场的控制器对象
 - (nullable UIPresentationController *)presentationControllerForPresentedViewController:(UIViewController *)presented presentingViewController:(UIViewController *)presenting sourceViewController:(UIViewController *)source
 {
-    MainPresentationController *controller = [[MainPresentationController alloc] initWithPresentedViewController:presented presentingViewController:presenting];
+    UIPresentationController *controller = [[UIPresentationController alloc] initWithPresentedViewController:presented presentingViewController:presenting];
     return controller;
 }
 
